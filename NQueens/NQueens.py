@@ -24,7 +24,6 @@ def has_threats(board, col, predicate):
 
 def generate_solutions(board_size):        
     board = [0]
-    
     size = lambda: len(board)
 
     while True:     
