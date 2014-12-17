@@ -12,8 +12,7 @@ def has_row_threats(board, col):
     return has_threats(board, col, predicate)
 
 def has_diagonal_threats(board, col):
-    is_threaten = lambda c1, c2: abs(c1 - c2) == abs(board[c1] - board[c2]) != 0
-    predicate = lambda i: is_threaten(i, col)
+    predicate = lambda i: abs(i - col) == abs(board[i] - board[col]) != 0
     return has_threats(board, col, predicate)
 
 def has_threats(board, col, predicate):
