@@ -9,13 +9,13 @@ import sys
         
 def has_row_threats(board, col):
     predicate = lambda i: i != col and board[col] == board[i]
-    return has_threats(board, col, predicate)
+    return has_threats(col, predicate)
 
 def has_diagonal_threats(board, col):
     predicate = lambda i: abs(i - col) == abs(board[i] - board[col]) != 0
-    return has_threats(board, col, predicate)
+    return has_threats(col, predicate)
 
-def has_threats(board, col, predicate):
+def has_threats(col, predicate):
     for i in range(col):
         if predicate(i):
             return True
